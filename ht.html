@@ -1,0 +1,145 @@
+ADD EVENT LISTENER, BOM:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="lo()" onresize="re()">
+    <h1 id="a"></h1>
+    <button onclick="a()">Change</button>
+    <button onmouseover="b()" onmouseout="c()">CSS</button><br><br>
+
+    <input type="text" id="input" onkeyup="d()"><br><br>
+
+    <input type="text" id="for" onfocus="e()" onblur="f()">
+
+    <select id="se" onchange="g()">
+        <option value=""></option>
+        <option value="option1">Option 1</option>
+        <option value="option2">Option 2</option>
+        <option value="option3">Option 3</option>
+    </select>
+    <p id="p"></p>
+
+    <form onsubmit="h()">
+        <p>
+           <label for="name">Name:</label>
+           <input type="text" id="name" name="name" required>
+        </p>
+        <p>
+            <input type="submit" value="Submit">
+        </p>
+    </form>
+    <h1 id="q"></h1>
+
+    <a href="addeve.html">Next page</a>
+    <script>
+        function lo(){
+            document.querySelector("body").style.backgroundColor = "yellow";
+            document.querySelector("form").style.backgroundColor = "red"; 
+        }
+        function re(){
+            document.querySelector("body").style.backgroundColor = "red";
+            document.querySelector("form").style.backgroundColor = "yellow"; 
+        }
+
+
+
+
+
+
+
+
+        function h(){
+            alert("Form submitted!");
+            document.querySelector("form").style.backgroundColor = "lightgray";
+            var x = document.getElementById("name").value;
+            document.getElementById("q").innerHTML = "The given Name is: " + x
+        }
+        function g(){
+            var x = document.getElementById("se").value;
+            document.getElementById("p").innerHTML = "You selected: " + x;
+        }
+        function e(){
+            var x = document.getElementById("for");
+            x.style.backgroundColor = "lightgreen";
+            x.style.color = "blue";
+        }
+        function f(){
+            var x = document.getElementById("for");
+            x.style.backgroundColor = "black";
+            x.style.color = "white";
+        }
+
+
+
+
+
+
+        function d(){
+             var x = document.getElementById("input");
+             x.value = x.value.toUpperCase();
+             x.style.backgroundColor = "lightblue";
+             x.style.color = "red";
+         }
+        function a() {
+            document.getElementById("a").innerHTML = "Hello, World!";
+        }
+        function b(){
+            document.getElementById("a").style.color = "red";   
+        }
+        function c(){
+            document.getElementById("a").style.backgroundColor = "yellow";  
+            document.getElementById("a").style.width = "100px";
+            document.getElementById("a").style.color = "black";
+        }
+
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">CLICK</button>
+    <h1 id="heading"></h1>
+
+    <button class="btn1">BACK</button>
+    <button class="btn2">FORWARD</button>
+    <button class="btn3">GO</button><br><br>
+    <a href="https://www.amazon.com">AMAZON</a>
+    <script>
+        document.querySelector(".btn1").addEventListener("click", function() {
+            window.history.back();
+        });
+        document.querySelector(".btn2").addEventListener("click", function() {
+            window.history.forward();
+        });
+        document.querySelector(".btn3").addEventListener("click", function() {
+            window.history.go(3);
+        });
+        
+        document.getElementById("btn").addEventListener("click", function() {
+            alert("Button was clicked!");
+            confirm("Do you want to continue?");
+        });
+        document.getElementById("btn").addEventListener("click", function() {
+            document.getElementById("heading").innerHTML = "Button was clicked!";
+            document.getElementById("heading").style.backgroundColor = "yellow"
+        });
+        document.getElementById("btn").addEventListener("click", function() {
+            document.getElementById("heading").style.color = "red";  
+        });
+
+    </script>
+
+</body>
+</html>
+
